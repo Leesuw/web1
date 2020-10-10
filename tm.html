@@ -56,9 +56,11 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         if(prediction[0].probability > 0.5){
-            console.log("주간")    
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
         }else{
-            console.log("야간")
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
         }
         
         for (let i = 0; i < maxPredictions; i++) {
